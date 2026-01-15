@@ -8,6 +8,7 @@ coverImage: /assets/shared/willow-studio-logo-5.png
 date: 2020-03-16T05:35:00.000Z
 author:
   name: Xuefeng
+  picture: /assets/shared/willow-studio-logo-10.png
 ogImage:
   url: /assets/shared/willow-studio-logo-5.png
 ---
