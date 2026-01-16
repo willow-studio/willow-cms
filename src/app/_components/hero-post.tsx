@@ -5,6 +5,7 @@ import Link from "next/link";
 import DateFormatter from "./date-formatter";
 
 type Props = {
+  lang: "zh" | "en";
   title: string;
   coverImage: string;
   date: string;
@@ -14,6 +15,7 @@ type Props = {
 };
 
 export function HeroPost({
+  lang,
   title,
   coverImage,
   date,
@@ -24,14 +26,14 @@ export function HeroPost({
   return (
     <section>
       <div className="mb-8 md:mb-16">
-        <CoverImage title={title} src={coverImage} slug={slug} />
+        <CoverImage lang={lang} title={title} src={coverImage} slug={slug} />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link
-              as={`/posts/${slug}`}
-              href="/posts/[slug]"
+              as={`/${lang}/posts/${slug}`}
+              href={`/${lang}/posts/[slug]`}
               className="hover:underline"
             >
               {title}

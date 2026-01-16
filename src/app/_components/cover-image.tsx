@@ -3,12 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 type Props = {
+  lang: "zh" | "en";
   title: string;
   src: string;
   slug?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ lang, title, src, slug }: Props) => {
   const image = (
     <Image
       src={src}
@@ -22,13 +23,17 @@ const CoverImage = ({ title, src, slug }: Props) => {
   );
   return (
     <div className="sm:mx-0">
-      {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]" aria-label={title}>
-          {image}
-        </Link>
-      ) : (
-        image
-      )}
+      {slug && lang
+        ? (
+          <Link
+            as={`/${lang}/posts/${slug}`}
+            href={`/${lang}/posts/[slug]`}
+            aria-label={title}
+          >
+            {image}
+          </Link>
+        )
+        : image}
     </div>
   );
 };
