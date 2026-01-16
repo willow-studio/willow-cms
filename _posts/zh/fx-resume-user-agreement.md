@@ -7,7 +7,7 @@ tags: ["outside"]
 template: "plain"
 ---
 
-Willow Studio（以下简称”我们“）依据本协议为用户（以下简称“你”）提供 fx-resume 服务。本协议对你和我们均具有法律约束力。
+Willow Studio（以下简称”我们“）依据本协议为用户（以下简称“你”）提供 `fx-resume` 服务。本协议对你和我们均具有法律约束力。
 
 #### 一、本服务的功能
 

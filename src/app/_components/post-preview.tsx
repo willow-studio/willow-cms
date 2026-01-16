@@ -8,10 +8,10 @@ import type { Lang } from "@/interfaces/language";
 type Props = {
   lang: Lang;
   title: string;
-  coverImage: string;
+  coverImage?: string;
   date: string;
-  excerpt: string;
-  author: Author;
+  excerpt?: string;
+  author?: Author;
   slug: string;
 };
 
@@ -26,9 +26,18 @@ export function PostPreview({
 }: Props) {
   return (
     <div>
-      <div className="mb-5">
-        <CoverImage lang={lang} slug={slug} title={title} src={coverImage} />
-      </div>
+      {coverImage
+        ? (
+          <div className="mb-5">
+            <CoverImage
+              lang={lang}
+              slug={slug}
+              title={title}
+              src={coverImage}
+            />
+          </div>
+        )
+        : null}
       <h3 className="text-3xl mb-3 leading-snug">
         <Link
           as={`/${lang}/posts/${slug}`}
@@ -42,7 +51,7 @@ export function PostPreview({
         <DateFormatter dateString={date} locale={lang} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      {author ? <Avatar name={author.name} picture={author.picture} /> : null}
     </div>
   );
 }
