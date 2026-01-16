@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { getAllPosts, getPostByLangAndSlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import PostComponent from "@/app/_components/post-page";
 
@@ -10,15 +10,17 @@ type Params = {
   }>;
 };
 
+const LANG = "zh";
+
 export default async function PostPage({ params }: Params) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
-  return <PostComponent lang="zh" post={post}></PostComponent>;
+  const post = getPostByLangAndSlug(LANG, slug);
+  return <PostComponent lang={LANG} post={post}></PostComponent>;
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = getPostByLangAndSlug(LANG, slug);
 
   if (!post) {
     return notFound();
