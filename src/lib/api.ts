@@ -1,7 +1,8 @@
-import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
+import { OUTSIDE_POSTS_TAG } from "./constants";
 import { join } from "path";
+import type { Post } from "@/interfaces/post";
 import type { Lang } from "@/interfaces/language";
 
 const postsDirectory = join(process.cwd(), "_posts");
@@ -46,11 +47,16 @@ function descPost(
   return post1.date > post2.date ? -1 : 1;
 }
 
+function filterOutsidePost(post: Post) {
+  if (!post?.tags) return true;
+  return !post.tags.includes(OUTSIDE_POSTS_TAG);
+}
+
 export function getAllPosts(lang?: Lang): Post[] {
   if (lang) {
     const slugs = getPostsByLang(lang);
     const posts = slugs
-      .map((slug) => getPostByLangAndSlug(lang, slug))
+      .map((slug) => getPostByLangAndSlug(lang, slug)).filter(filterOutsidePost)
       .toSorted(descPost);
     return posts;
   }

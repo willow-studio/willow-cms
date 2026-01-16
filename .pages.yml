@@ -1,7 +1,7 @@
 media:
   input: public/assets
   output: /assets
-  categories: ['image']
+  categories: ["image"]
 content:
   - name: posts
     label: Posts
@@ -14,22 +14,47 @@ content:
           name: language,
           label: Language,
           type: select,
-          options: { values: [{ value: en, label: English }, { value: zh, label: 中文 }] },
-          default: 'en',
+          options:
+            {
+              values:
+                [{ value: en, label: English }, { value: zh, label: 中文 }],
+            },
+          default: "en",
         }
       - { name: title, label: Title, type: string, required: true }
       - { name: excerpt, label: Excerpt, type: string }
       - { name: coverImage, label: Cover image, type: image }
-      - { name: date, label: Date, type: date, options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" } }
-      - { name: tags, label: Tags, type: select, options: { creatable: true, multiple: true, values: ['outside'] } }
+      - {
+          name: date,
+          label: Date,
+          type: date,
+          options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" },
+        }
+      - {
+          name: tags,
+          label: Tags,
+          type: select,
+          options: { creatable: true, multiple: true, values: ["outside"] },
+        }
       - {
           name: template,
           label: Custom Template,
           type: select,
           options:
-            { creatable: true, values: [{ value: default, label: Default }, { value: outside, label: Outside }] },
-          default: 'default',
-          ui: { component: 'select', description: 'Choose the template for this post' },
+            {
+              creatable: true,
+              values:
+                [
+                  { value: default, label: Default },
+                  { value: plain, label: Plain },
+                ],
+            },
+          default: "default",
+          ui:
+            {
+              component: "select",
+              description: "Choose the template for this post",
+            },
         }
       - name: author
         label: Author

@@ -8,10 +8,10 @@ import { type Author } from "@/interfaces/author";
 type Props = {
   lang: Lang;
   title: string;
-  coverImage: string;
+  coverImage?: string;
   date: string;
-  excerpt: string;
-  author: Author;
+  excerpt?: string;
+  author?: Author;
   slug: string;
 };
 
@@ -26,9 +26,19 @@ export function HeroPost({
 }: Props) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
-        <CoverImage lang={lang} title={title} src={coverImage} slug={slug} />
-      </div>
+      {coverImage
+        ? (
+          <div className="mb-8 md:mb-16">
+            <CoverImage
+              lang={lang}
+              title={title}
+              src={coverImage}
+              slug={slug}
+            />
+          </div>
+        )
+        : null}
+
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
@@ -45,8 +55,12 @@ export function HeroPost({
           </div>
         </div>
         <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <Avatar name={author.name} picture={author.picture} />
+          {excerpt
+            ? <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+            : null}
+          {author
+            ? <Avatar name={author.name} picture={author.picture} />
+            : null}
         </div>
       </div>
     </section>
