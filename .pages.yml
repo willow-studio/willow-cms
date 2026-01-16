@@ -10,7 +10,16 @@ content:
     view:
       fields: [coverImage, title, date]
     fields:
-      - { name: language, label: Language, type: string, options: ['en', 'zh'], default: 'en' }
+    - { 
+        name: language, 
+        label: Language, 
+        type: string, 
+        options: { 
+          en: "English", 
+          zh: "中文" 
+        }, 
+        default: "en" 
+      }
       - { name: title, label: Title, type: string, required: true }
       - { name: excerpt, label: Excerpt, type: string }
       - { name: coverImage, label: Cover image, type: image }
