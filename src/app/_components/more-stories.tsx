@@ -1,8 +1,9 @@
 import { Post } from "@/interfaces/post";
 import { PostPreview } from "./post-preview";
+import type { Lang } from "@/interfaces/language";
 
 type Props = {
-  lang: "zh" | "en";
+  lang: Lang;
   posts: Post[];
 };
 

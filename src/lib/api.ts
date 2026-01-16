@@ -2,6 +2,7 @@ import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import type { Lang } from "@/interfaces/language";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -18,11 +19,14 @@ export function getPostBySlug(slug: string) {
   return { ...data, slug: realSlug, content } as Post;
 }
 
-export function getAllPosts(): Post[] {
+export function getAllPosts(lang?: Lang): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  if (lang) {
+    return posts.filter((post) => post.language === lang);
+  }
   return posts;
 }

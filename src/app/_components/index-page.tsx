@@ -3,13 +3,14 @@ import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getAllPosts } from "@/lib/api";
+import type { Lang } from "@/interfaces/language";
 
 interface IndexPageProps {
-  lang: "zh" | "en";
+  lang: Lang;
 }
 
 export default function IndexPage({ lang }: IndexPageProps) {
-  const allPosts = getAllPosts();
+  const allPosts = getAllPosts(lang);
 
   const heroPost = allPosts[0];
 

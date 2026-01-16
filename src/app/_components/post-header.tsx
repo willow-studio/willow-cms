@@ -3,9 +3,10 @@ import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
 import { PostTitle } from "@/app/_components/post-title";
 import { type Author } from "@/interfaces/author";
+import type { Lang } from "@/interfaces/language";
 
 type Props = {
-  lang: "zh" | "en";
+  lang: Lang;
   title: string;
   coverImage: string;
   date: string;
@@ -27,7 +28,7 @@ export function PostHeader({ lang, title, coverImage, date, author }: Props) {
           <Avatar name={author.name} picture={author.picture} />
         </div>
         <div className="mb-6 text-lg">
-          <DateFormatter dateString={date} />
+          <DateFormatter dateString={date} locale={lang} />
         </div>
       </div>
     </>

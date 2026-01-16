@@ -1,11 +1,12 @@
 import Avatar from "@/app/_components/avatar";
 import CoverImage from "@/app/_components/cover-image";
-import { type Author } from "@/interfaces/author";
 import Link from "next/link";
 import DateFormatter from "./date-formatter";
+import type { Lang } from "@/interfaces/language";
+import { type Author } from "@/interfaces/author";
 
 type Props = {
-  lang: "zh" | "en";
+  lang: Lang;
   title: string;
   coverImage: string;
   date: string;
@@ -40,7 +41,7 @@ export function HeroPost({
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
+            <DateFormatter dateString={date} locale={lang} />
           </div>
         </div>
         <div>

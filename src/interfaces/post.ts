@@ -1,6 +1,8 @@
 import { type Author } from "./author";
+import { type Lang } from "./language";
 
 export type Post = {
+  language: Lang;
   slug: string;
   title: string;
   date: string;

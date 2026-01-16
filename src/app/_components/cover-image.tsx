@@ -1,9 +1,10 @@
 import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
+import type { Lang } from "@/interfaces/language";
 
 type Props = {
-  lang: "zh" | "en";
+  lang: Lang;
   title: string;
   src: string;
   slug?: string;
