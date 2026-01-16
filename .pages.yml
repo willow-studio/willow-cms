@@ -10,11 +10,33 @@ content:
     view:
       fields: [coverImage, title, date]
     fields:
-      - { name: language, label: Language, type: string, options: { en: 'English', zh: '中文' }, default: 'en' }
+      - {
+          name: language,
+          label: Language,
+          type: string,
+          options: { en: 'English', zh: '中文' },
+          default: 'en',
+          ui: { component: 'select', description: 'Choose the language for this post' },
+        }
       - { name: title, label: Title, type: string, required: true }
       - { name: excerpt, label: Excerpt, type: string }
       - { name: coverImage, label: Cover image, type: image }
       - { name: date, label: Date, type: date, options: { time: true, format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" } }
+      - {
+          name: tags,
+          label: Tags,
+          type: list,
+          items: { type: string },
+          ui: { displayMode: 'select', description: 'Choose or input the tags for this post' },
+        }
+      - {
+          name: template,
+          label: Custom Template,
+          type: string,
+          options: { default: 'Default Template', featured: 'Featured Template', minimal: 'Minimal Template' },
+          default: 'default',
+          ui: { component: 'select', description: 'Choose the template for this post' },
+        }
       - name: author
         label: Author
         type: object
