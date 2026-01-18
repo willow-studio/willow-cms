@@ -1,4 +1,5 @@
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
+import HtmlHead from "@/app/_components/html-head";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -17,6 +18,7 @@ export default function RootLayout() {
       lang=""
       className="h-full bg-linear-to-br from-gray-50 to-gray-100"
     >
+      <HtmlHead />
       <body className="h-full flex flex-col items-center justify-center gap-12 px-4">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-20">
