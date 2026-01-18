@@ -11,11 +11,11 @@ interface Props {
 
 export default function PlainPost({ post, content }: Props) {
   return (
-    <main className="min-h-screen pt-15 bg-gray-200 flex flex-col">
-      <header className="w-full h-15 px-4 flex items-center gap-4 bg-white shadow-md fixed top-0 left-0 z-10 overflow-hidden">
+    <main className="min-h-screen pt-15 bg-gray-200  dark:bg-gray-600 flex flex-col">
+      <header className="w-full h-15 px-4 flex items-center gap-4 dark:text-white bg-white dark:bg-gray-800 shadow-md fixed top-0 left-0 z-10 overflow-hidden">
         <div className="flex items-center gap-2">
           <img
-            src="/assets/shared/logo/without-text-100x100.png"
+            src="/assets/shared/logo/without-text-339x339-transparent.png"
             alt="logo"
             width={54}
           />
@@ -23,7 +23,7 @@ export default function PlainPost({ post, content }: Props) {
         </div>
       </header>
 
-      <Container className="max-w-3xl box-border bg-white p-4 mx-auto md:my-10">
+      <Container className="max-w-3xl box-border dark:text-neutral-200 bg-white dark:bg-gray-900 p-4 mx-auto md:my-10">
         <div className="mt-10 mb-10 transition-all duration-300 md:sticky top-3 z-11">
           <h3 className="text-3xl text-center">{post.title}</h3>
         </div>
