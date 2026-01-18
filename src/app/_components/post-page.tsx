@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import markdownToHtml from "@/lib/markdownToHtml";
-import DefaultPost from "@/app/_components/template/default-post";
-import PlainPost from "@/app/_components/template/plain-post";
+import DefaultPost from "@/app/_components/template/default/default-post";
+import PlainPost from "@/app/_components/template/plain/plain-post";
 import type { Lang } from "@/interfaces/language";
 import type { Post } from "@/interfaces/post";
 

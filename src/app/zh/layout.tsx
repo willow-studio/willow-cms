@@ -1,5 +1,6 @@
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import { Inter } from "next/font/google";
+import ScrollToTopWithProgress from "@/app/_components/backtop";
 import type { Metadata } from "next";
 
 import "@/app/globals.css";
@@ -56,6 +57,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <div className="min-h-screen">{children}</div>
+        <ScrollToTopWithProgress />
       </body>
     </html>
   );

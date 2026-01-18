@@ -32,7 +32,7 @@ export default function DefaultPost({ lang, post, content }: Props) {
           </article>
         </Container>
       </main>
-      <Footer />
+      <Footer lang={lang} />
     </>
   );
 }
