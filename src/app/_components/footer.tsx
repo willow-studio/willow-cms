@@ -39,10 +39,13 @@ export default function Footer({ lang }: Props) {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img
-                src="/assets/shared/logo/800x450-round.png"
-                width={200}
+                src="/assets/shared/logo/without-text-339x339-transparent.png"
+                width={80}
                 alt="logo"
               />
+              <div className="flex flex-col text-3xl text-emerald-600 font-semibold">
+                <h1>Willow</h1> <h1>Studio</h1>
+              </div>
             </div>
             <p className="text-gray-400 max-w-xs">
               Life was a willow and it bent right to your wind

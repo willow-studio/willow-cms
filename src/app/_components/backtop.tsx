@@ -55,12 +55,12 @@ function ScrollToTopWithProgress() {
         sm:h-10
         flex items-center justify-center
         rounded-full
-        bg-linear-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700
+        bg-linear-to-br from-lime-400 to-emerald-600 hover:from-lime-500 hover:to-emerald-700
         text-white
         shadow-lg hover:shadow-2xl
         transition-all duration-300 ease-in-out
         z-50
-        focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+        focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
         ${
         isVisible
           ? "opacity-100 translate-y-0"

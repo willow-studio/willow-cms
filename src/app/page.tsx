@@ -13,24 +13,30 @@ export const metadata: Metadata = {
 
 export default function RootLayout() {
   return (
-    <html lang="" className="h-full bg-linear-to-br from-gray-50 to-gray-100">
+    <html
+      lang=""
+      className="h-full bg-linear-to-br from-gray-50 to-gray-100"
+    >
       <body className="h-full flex flex-col items-center justify-center gap-12 px-4">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-20">
           </div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20">
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-20">
           </div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-20">
           </div>
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center gap-12 max-w-4xl">
           <div className="flex flex-col items-center gap-8">
             <img
-              src="/assets/shared/logo/800x450-round.png"
+              src="/assets/shared/logo/without-text-339x339-transparent.png"
               alt="willow studio logo"
-              className="w-100 object-cover"
+              className="w-50 object-cover"
             />
+
+            <h1 className="text-4xl">Willow Studio</h1>
+            <h1 className="text-3xl text-emerald-600">蔚柳工作室</h1>
 
             <div className="text-center">
               <p className="text-gray-600 text-lg">
